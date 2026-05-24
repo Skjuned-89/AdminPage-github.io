@@ -8,6 +8,7 @@ import {
   LogOut,
   User,
 } from "lucide-react";
+import { Navigate } from 'react-router-dom'
 
 function SidebarCard({ title, icon: Icon, active }) {
   return (
@@ -23,9 +24,6 @@ function SidebarCard({ title, icon: Icon, active }) {
     </div>
   );
 }
-// const userName = localStorage.getItem('user')
-// const Name = JSON.parse(userName).username
-
 export default function Sidebar() {
   let Name, userName
   const isLoggedin = localStorage.getItem('isLoggedIn')
