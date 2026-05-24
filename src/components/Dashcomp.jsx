@@ -4,11 +4,12 @@ import {
   Users,
   ShoppingCart,
 } from "lucide-react";
+import { Navigate } from 'react-router-dom'
 
 function StatCard({ title, value, icon: Icon }) {
   return (
     <div className="bg-white p-5 rounded-3xl shadow-sm border border-gray-100 flex items-center justify-between hover:shadow-lg transition-all duration-300">
-      
+
       <div>
         <p className="text-gray-500 text-sm">{title}</p>
         <h1 className="text-3xl font-bold mt-2">{value}</h1>
@@ -53,7 +54,7 @@ function RecentActivity() {
       </h1>
 
       <div className="flex flex-col gap-4">
-        
+
         <div className="flex items-center justify-between">
           <div>
             <h1 className="font-semibold">Payment Received</h1>
@@ -96,12 +97,19 @@ function RecentActivity() {
     </div>
   );
 }
-// const userName = localStorage.getItem('user')
-// const Name = JSON.parse(userName).username
 export default function DashboardRight() {
+  let Name ,userName
+  const isLoggedin = localStorage.getItem('isLoggedIn')
+  if (isLoggedin) {
+    userName = localStorage.getItem('user')
+    Name = JSON.parse(userName).username
+  }
+  else {
+    return <Navigate to='/' />
+  }
   return (
     <div className="flex-1 bg-[#f5f7fb] p-6 overflow-y-auto w-full h-screen ">
-      
+
       {/* Top */}
       <div className="flex items-center justify-between mb-8">
         <div>
@@ -110,7 +118,7 @@ export default function DashboardRight() {
           </h1>
 
           <p className="text-gray-500 mt-1">
-            Welcome back, Name 👋
+            Welcome back, {Name} 👋
           </p>
         </div>
 
@@ -150,7 +158,7 @@ export default function DashboardRight() {
 
       {/* Charts */}
       <div className="grid grid-cols-3 gap-6">
-        
+
         <div className="col-span-2">
           <ChartBox title="Sales Analytics" />
         </div>

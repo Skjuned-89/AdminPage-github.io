@@ -27,6 +27,15 @@ function SidebarCard({ title, icon: Icon, active }) {
 // const Name = JSON.parse(userName).username
 
 export default function Sidebar() {
+  let Name, userName
+  const isLoggedin = localStorage.getItem('isLoggedIn')
+  if (isLoggedin) {
+    userName = localStorage.getItem('user')
+    Name = JSON.parse(userName).username
+  }
+  else {
+    return <Navigate to='/' />
+  }
   return (
     <div className="w-[280px] h-screen bg-[#111827] border-r border-white/10 flex flex-col justify-between p-5">
 
@@ -89,7 +98,7 @@ export default function Sidebar() {
             </div>
 
             <div>
-              <h1 className="text-white font-semibold">Name</h1>
+              <h1 className="text-white font-semibold">{Name}</h1>
               <p className="text-gray-400 text-sm">Administrator</p>
             </div>
           </div>
