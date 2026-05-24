@@ -96,8 +96,8 @@ function RecentActivity() {
     </div>
   );
 }
-const userName = localStorage.getItem('user')
-const Name = JSON.parse(userName).username
+// const userName = localStorage.getItem('user')
+// const Name = JSON.parse(userName).username
 export default function DashboardRight() {
   return (
     <div className="flex-1 bg-[#f5f7fb] p-6 overflow-y-auto w-full h-screen ">
@@ -110,7 +110,7 @@ export default function DashboardRight() {
           </h1>
 
           <p className="text-gray-500 mt-1">
-            Welcome back, {Name} 👋
+            Welcome back, Name 👋
           </p>
         </div>
 

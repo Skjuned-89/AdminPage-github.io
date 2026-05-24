@@ -23,8 +23,8 @@ function SidebarCard({ title, icon: Icon, active }) {
     </div>
   );
 }
-const userName = localStorage.getItem('user')
-const Name = JSON.parse(userName).username
+// const userName = localStorage.getItem('user')
+// const Name = JSON.parse(userName).username
 
 export default function Sidebar() {
   return (
@@ -89,7 +89,7 @@ export default function Sidebar() {
             </div>
 
             <div>
-              <h1 className="text-white font-semibold">{Name}</h1>
+              <h1 className="text-white font-semibold">Name</h1>
               <p className="text-gray-400 text-sm">Administrator</p>
             </div>
           </div>
