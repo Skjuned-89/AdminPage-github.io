@@ -19,7 +19,7 @@ const Signup = () => {
 
   return (
     <div className='w-screen h-screen flex justify-center items-center bg-[#111827] '>
-      <div className="w-1/3 py-[100px] hover:shadow-[0px_0px_60px_1px_rgba(0,0,0,.5)] transition-all rounded-3xl overflow-hidden bg-cyan-500 text-white flex flex-col justify-center items-center gap-10 uppercase">
+      <div className="w-1/3 py-[3rem] hover:shadow-[0px_0px_60px_1px_rgba(0,0,0,.5)] transition-all rounded-3xl overflow-hidden bg-cyan-500 text-white flex flex-col justify-center items-center gap-10 uppercase">
         <div className=" flex flex-col justify-center items-center gap-2">
           <div className="text-4xl font-bold">Sign Up</div>
           <p className='capitalize text-black font-bold'>Please Enter Your valid Details to signup</p>

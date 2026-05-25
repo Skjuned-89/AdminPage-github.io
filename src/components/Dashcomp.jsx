@@ -98,7 +98,7 @@ function RecentActivity() {
   );
 }
 export default function DashboardRight() {
-  let Name ,userName
+  let Name, userName
   const isLoggedin = localStorage.getItem('isLoggedIn')
   if (isLoggedin) {
     userName = localStorage.getItem('user')
