@@ -8,22 +8,7 @@ import {
   LogOut,
   User,
 } from "lucide-react";
-import { Navigate } from 'react-router-dom'
-
-function SidebarCard({ title, icon: Icon, active }) {
-  return (
-    <div
-      className={`flex items-center gap-4 px-4 py-3 rounded-2xl cursor-pointer transition-all duration-300
-      ${active
-          ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/30"
-          : "text-gray-300 hover:bg-white/10 hover:text-white"
-        }`}
-    >
-      <Icon className="w-5 h-5" />
-      <h1 className="font-medium">{title}</h1>
-    </div>
-  );
-}
+import { Navigate, useNavigate, useLocation } from 'react-router-dom'
 export default function Sidebar() {
   let Name, userName
   const isLoggedin = localStorage.getItem('isLoggedIn')
@@ -34,6 +19,54 @@ export default function Sidebar() {
   else {
     return <Navigate to='/' />
   }
+  let navigate = useNavigate()
+  const handleLogout = () => {
+    localStorage.clear()
+    navigate("/")
+
+    // window.location.reload(); 
+    // window.location.href="/"
+    // if(!isLoggedin){
+    //   return <Navigate to='/' replace />
+    // }
+  }
+  const location = useLocation()
+
+  const menuItems = [
+    {
+      title: "Dashboard",
+      icon: LayoutDashboard,
+      path: "/dashboard",
+    },
+    {
+      title: "Activity",
+      icon: Activity,
+      path: "/activity",
+    },
+    {
+      title: "Analytics",
+      icon: ChartColumn,
+      path: "/analytics",
+    },
+    {
+      title: "Transactions",
+      icon: Receipt,
+      path: "/transactions",
+    },
+    {
+      title: "Invoices",
+      icon: FileText,
+      path: "/invoices",
+    },
+    {
+      title: "Settings",
+      icon: Settings,
+      path: "/settings",
+    },
+  ];
+
+  const activeItem =
+    menuItems.find((item) => item.path === location.pathname)?.title ?? "Dashboard"
   return (
     <div className="w-[280px] h-screen bg-[#111827] border-r border-white/10 flex flex-col justify-between p-5">
 
@@ -53,36 +86,31 @@ export default function Sidebar() {
 
         {/* Menu */}
         <div className="flex flex-col gap-2">
-          <SidebarCard
-            title="Dashboard"
-            icon={LayoutDashboard}
-            active={true}
-          />
 
-          <SidebarCard
-            title="Activity"
-            icon={Activity}
-          />
+          <div className="flex flex-col gap-2">
 
-          <SidebarCard
-            title="Analytics"
-            icon={ChartColumn}
-          />
+            {menuItems.map((item) => {
+              const Icon = item.icon;
 
-          <SidebarCard
-            title="Transactions"
-            icon={Receipt}
-          />
+              return (
+                <div
+                  key={item.title}
+                  onClick={() => navigate(item.path)}
+                  className={`flex items-center gap-4 px-4 py-3 rounded-2xl cursor-pointer transition-all duration-300 ${activeItem === item.title
+                    ? "bg-cyan-500 text-white shadow-lg shadow-cyan-500/30"
+                    : "text-gray-300 hover:bg-white/10 hover:text-white"
+                    }`}
+                >
+                  <Icon className="w-5 h-5" />
 
-          <SidebarCard
-            title="Invoices"
-            icon={FileText}
-          />
+                  <h1 className="font-medium">
+                    {item.title}
+                  </h1>
+                </div>
+              );
+            })}
 
-          <SidebarCard
-            title="Settings"
-            icon={Settings}
-          />
+          </div>
         </div>
       </div>
 
@@ -101,7 +129,7 @@ export default function Sidebar() {
             </div>
           </div>
 
-          <LogOut className="text-gray-400 hover:text-red-500 cursor-pointer transition-all duration-300" />
+          <LogOut className="text-gray-400 hover:text-red-500 cursor-pointer transition-all duration-300" onClick={handleLogout} />
         </div>
       </div>
     </div>
