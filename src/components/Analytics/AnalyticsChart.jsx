@@ -22,9 +22,9 @@ const AnalyticsChart = () => {
 
       <div className="h-[300px] flex items-end gap-3">
         {WEEK_CHART_DATA.map((item, index) => (
-          <div
+          <div style={{ height: item.height }}
             key={item.day}
-            className="flex-1 flex flex-col items-center justify-end h-full gap-2"
+            className="flex-1 flex flex-col items-center justify-end gap-2 "
           >
             <motion.div
               initial={{

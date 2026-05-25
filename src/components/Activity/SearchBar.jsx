@@ -11,7 +11,7 @@ export default function SearchBar() {
         placeholder="Search task..."
         className="bg-transparent outline-none text-white placeholder:text-gray-400 w-[220px]"
       />
-
+  
       <motion.button
         whileHover={{
           scale: 1.1,

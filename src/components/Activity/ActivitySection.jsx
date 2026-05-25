@@ -2,11 +2,7 @@ import { Plus } from "lucide-react";
 import { motion } from "framer-motion";
 import TaskRow from "./TaskRow";
 
-export default function ActivitySection({
-  title = "Tasks",
-  count = 0,
-  tasks = [],
-}) {
+export default function ActivitySection({ title = "", count = 0, tasks = [] }) {
   return (
     <motion.div
       whileHover={{
