@@ -68,7 +68,7 @@ export default function Sidebar() {
   const activeItem =
     menuItems.find((item) => item.path === location.pathname)?.title ?? "Dashboard"
   return (
-    <div className="w-[280px] h-screen bg-[#111827] border-r border-white/10 flex flex-col justify-between p-5">
+    <div className="w-[280px] min-h-screen bg-[#111827] border-r border-white/10 flex flex-col justify-between p-5">
 
       {/* Top Section */}
       <div>

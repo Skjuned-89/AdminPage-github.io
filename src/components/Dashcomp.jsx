@@ -23,7 +23,7 @@ export default function DashboardRight() {
   }
 
   return (
-    <div className="flex-1 bg-[#f5f7fb] p-6 overflow-y-auto w-full h-screen">
+    <div className="flex-1 bg-transparentx p-6 overflow-y-auto w-full h-screen">
       <NavAdmin Name={Name} />
 
       <motion.div {...pageFade} className="flex flex-col">
@@ -31,7 +31,7 @@ export default function DashboardRight() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-4 gap-5 mb-6"
+          className="grid grid-cols-4 gap-3 mb-6"
         >
           <motion.div variants={fadeUp}>
             <StateCard title="Revenue" value="$12,540" icon={DollarSign} />
@@ -50,13 +50,13 @@ export default function DashboardRight() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-3 gap-6"
+          className="grid grid-cols-3 gap-3"
         >
-          <motion.div variants={fadeUp} className="col-span-2">
+          <motion.div variants={fadeUp} whileHover={{y:-8,}} className="col-span-2">
             <ChartBox title="Sales Analytics" />
           </motion.div>
 
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className="h-full">
             <RecentActivity />
           </motion.div>
         </motion.div>
@@ -65,12 +65,12 @@ export default function DashboardRight() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid grid-cols-2 gap-6 mt-6"
+          className="grid grid-cols-2 gap-3 mt-6"
         >
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} whileHover={{y:-8,}}>
             <ChartBox title="Revenue Overview" />
           </motion.div>
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} whileHover={{y:-8,}}>
             <ChartBox title="Traffic Report" />
           </motion.div>
         </motion.div>

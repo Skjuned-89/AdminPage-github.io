@@ -28,17 +28,17 @@ const AnalyticsCard = ({
           {title}
         </p>
 
-        <h1 className="text-4xl font-bold text-white mt-2">
+        <h1 className="text-[2rem] font-bold text-white mt-2">
           {value}
         </h1>
 
       </div>
 
-      <div className="w-14 h-14 rounded-2xl bg-cyan-500 flex items-center justify-center text-white">
+      <motion.div className="w-12 h-12 rounded-2xl bg-cyan-500 flex items-center justify-center text-white" whileHover={{rotate:20}}>
 
         <Icon />
 
-      </div>
+      </motion.div>
 
     </motion.div>
   );

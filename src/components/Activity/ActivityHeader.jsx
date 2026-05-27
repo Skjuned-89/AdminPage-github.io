@@ -19,7 +19,7 @@ export default function ActivityHeader() {
       className="flex items-center justify-between"
     >
       <div>
-        <h1 className="text-4xl font-bold text-black">
+        <h1 className="text-4xl font-bold text-white">
           Project Activity
         </h1>
       </div>

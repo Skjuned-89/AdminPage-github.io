@@ -19,10 +19,10 @@ const NavAdmin = ({ Name, title = "Dashboard" }) => {
     >
       <div>
         <p className="text-cyan-400 font-medium text-sm">
-          Dashboard / {title}
+          {title}
         </p>
-        <h1 className="text-3xl font-bold text-black mt-1">{title}</h1>
-        <p className="text-gray-500 mt-1">Welcome back, {Name}</p>
+        <h1 className="text-4xl font-bold text-white mt-1">{title}</h1>
+        <p className="text-white capitalize mt-1">Welcome back, {Name}</p>
       </div>
 
       <div className="flex items-center gap-3 bg-[#111827] border border-cyan-500/20 px-5 py-3 rounded-2xl hover:border-cyan-500 transition-all duration-300">

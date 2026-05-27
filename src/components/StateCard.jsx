@@ -10,16 +10,16 @@ const StateCard = ({ title, value, icon: Icon }) => {
       transition={{
         duration: 0.3,
       }}
-      className="bg-[#111827] border border-cyan-500/20 rounded-3xl p-5 flex items-center justify-between hover:shadow-2xl hover:shadow-cyan-500/10"
+      className="bg-[#111827] border border-cyan-500/20 rounded-3xl p-5 flex items-center justify-between"
     >
       <div>
         <p className="text-gray-400">{title}</p>
-        <h1 className="text-4xl font-bold text-white mt-2">{value}</h1>
+        <h1 className="text-[2rem] font-bold text-white mt-2">{value}</h1>
       </div>
 
-      <div className="w-14 h-14 rounded-2xl bg-cyan-500 flex items-center justify-center text-white">
+      <motion.div className="w-12 h-12 rounded-2xl bg-cyan-500 flex items-center justify-center text-white" whileHover={{rotate:20}}>
         <Icon />
-      </div>
+      </motion.div>
     </motion.div>
   );
 };

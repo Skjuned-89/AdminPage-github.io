@@ -5,8 +5,8 @@ import Dashcomp from '../components/Dashcomp'
 
 const Dashboard = () => {
   return (
-    <div className=''>
-      <div className="dashboard flex">
+    <div style={{background:"linear-gradient(180deg, hsla(221, 39%, 11%, 1) 0%, hsla(188, 100%, 47%, 1) 100%)",}} className="">
+      <div className="flex 2xl:w-[1300px] m-auto">
         <Sidebar width='30%' />
         <Dashcomp width='70%' />
       </div>

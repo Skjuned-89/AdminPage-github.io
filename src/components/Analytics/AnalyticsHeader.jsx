@@ -30,7 +30,7 @@ const AnalyticsHeader = () => {
           Dashboard / Analytics
         </p>
 
-        <h1 className="text-4xl font-bold text-black mt-2">
+        <h1 className="text-4xl font-bold text-white mt-2">
           Analytics Overview
         </h1>
 

@@ -45,11 +45,11 @@ const InvoiceHeader = () => {
 
         </div>
 
-        <button className="w-12 h-12 rounded-2xl bg-cyan-500 flex items-center justify-center text-white">
+        <motion.button whileHover={{rotate:20}} className="w-12 h-12 rounded-2xl bg-cyan-500 flex items-center justify-center text-white">
 
           <Bell />
 
-        </button>
+        </motion.button>
 
       </div>
 

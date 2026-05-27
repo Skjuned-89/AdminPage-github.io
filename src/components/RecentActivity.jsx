@@ -27,7 +27,7 @@ const RecentActivity = () => {
       whileHover={{
         y: -5,
       }}
-      className="bg-[#111827] border border-cyan-500/20 rounded-3xl p-6"
+      className="bg-[#111827] border border-cyan-500/20 rounded-3xl p-6 h-full"
     >
       <h1 className="text-2xl font-bold text-white mb-6">Recent Activity</h1>
 

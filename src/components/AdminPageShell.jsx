@@ -8,7 +8,7 @@ const AdminPageShell = ({ title, children }) => {
   return (
     <div className="dashboard flex">
       <Sidebar />
-      <div className="flex-1 bg-[#f5f7fb] p-6 overflow-y-auto w-full h-screen">
+      <div style={{background:"linear-gradient(180deg, hsla(221, 39%, 11%, 1) 0%, hsla(188, 100%, 47%, 1) 100%)",}} className="flex-1 p-6 overflow-y-auto w-full h-screen">
         {children}
       </div>
     </div>
